@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01_majimun/Scenes/DemoGimmickRoom.unity
+    guid: 02cb5ef63eec843458da9063239d814d
   m_configObjects: {}
