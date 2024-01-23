@@ -17,10 +17,12 @@ public class Player : MonoBehaviour
 	// 物理
 	Rigidbody rb;
 
+	GameObject playerCamera;
+
 	private void Awake()
 	{
 		// 物理取得
-		rb = GetComponent<Rigidbody>();
+		rb = transform.GetComponent<Rigidbody>();
 
 		// 入力システム生成
 		input = new PlayerInput();
@@ -30,6 +32,11 @@ public class Player : MonoBehaviour
 		// 入力のコールバック登録
 		input.Move.Move.performed += Move;
 		input.Move.Move.canceled += Stop;
+
+
+		input.Move.CameraMove.performed += CameraMove;
+
+		playerCamera = Camera.main.gameObject;
 	}
 
 	private void OnEnable()
@@ -67,5 +74,19 @@ public class Player : MonoBehaviour
 	public void Stop(InputAction.CallbackContext context)
 	{
 		movevalue = Vector3.zero;
+	}
+
+	/// <summary>
+	/// カメラ移動
+	/// </summary>
+	/// <param name="context">入力情報</param>
+	public void CameraMove(InputAction.CallbackContext context)
+	{
+		// 情報取得
+		Vector3 value = context.ReadValue<Vector2>();
+
+		transform.eulerAngles += new Vector3(0, value.y, 0);
+
+		//playerCamera.transform.eulerAngles += value;
 	}
 }
