@@ -12,7 +12,11 @@ public class Player : MonoBehaviour
 	float moveSpeed;
 	// カメラの速度
 	[SerializeField]
-	float cameraSpeed;
+	Vector2 cameraSpeed;
+	// 可動域
+	[SerializeField]
+	float rangeOfMotion = 40;
+
 
 	// 移動値
 	Vector3 movevalue = Vector3.zero;
@@ -20,10 +24,8 @@ public class Player : MonoBehaviour
 	// 物理
 	Rigidbody rb;
 
+	// プレイヤーのカメラ
 	GameObject playerCamera;
-	// 可動域
-	[SerializeField]
-	float rangeOfMotion = 40;
 
 	private void Awake()
 	{
@@ -66,8 +68,12 @@ public class Player : MonoBehaviour
 	/// <param name="context">入力情報</param>
 	public void Move(InputAction.CallbackContext context)
 	{
-		// 移動する方向
-		var vel = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
+		// 前方の移動
+		var forward = transform.forward * context.ReadValue<Vector2>().y;
+		// 横の移動
+		var right = transform.right * context.ReadValue<Vector2>().x;
+		// 合計の移動
+		var vel = forward + right;
 		// 移動値の計算
 		movevalue = vel.normalized * moveSpeed;
 	}
@@ -99,7 +105,6 @@ public class Player : MonoBehaviour
 		{
 			// カメラの上下回転
 			playerCamera.transform.localEulerAngles += new Vector3(-value.y, 0, 0);
-			//playerCamera.transform.Rotate(new Vector3(value.y, 0, 0));
 		}
 	}
 }
