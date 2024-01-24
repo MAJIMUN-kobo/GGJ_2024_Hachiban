@@ -18,5 +18,11 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     }
 
     // [ Activate gimmick action. ]
-    public virtual void GimmickActionEvent(GameObject target = null) { }
+    public virtual void OnTriggerActivation(GameObject target) { }
+
+    // [ Activate gimmick action. ]
+    public virtual void OnLookAtActivation(GameObject target) { }
+
+    // [ Activate gimmick action. ]
+    public virtual void OnInputActivation(GameObject target) { }
 }

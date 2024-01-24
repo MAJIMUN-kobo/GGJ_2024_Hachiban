@@ -8,10 +8,10 @@ public class OfficeDoor : GimmickBehaviour
     [SerializeField] private PlayableDirector _timeline;
 
     // [ Activate gimmick action. ]
-    public override void GimmickActionEvent(GameObject target = null)
+    public override void OnTriggerActivation(GameObject target = null)
     {
         _timeline.Play();
 
-        base.GimmickActionEvent(target);
+        base.OnTriggerActivation(target);
     }
 }

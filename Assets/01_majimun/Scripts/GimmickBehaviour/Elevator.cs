@@ -11,12 +11,12 @@ public class Elevator : GimmickBehaviour
     }
 
     // [ Activate gimmick action, ]
-    public override void GimmickActionEvent(GameObject target = null)
+    public override void OnTriggerActivation(GameObject target = null)
     {
         Debug.Log("Elevator gimmick.");
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("DemoGimmickRoom");
 
-        base.GimmickActionEvent(target);
+        base.OnTriggerActivation(target);
     }
 }

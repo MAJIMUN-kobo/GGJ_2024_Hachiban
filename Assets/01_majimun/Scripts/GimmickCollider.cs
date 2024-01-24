@@ -21,7 +21,7 @@ public class GimmickCollider : MonoBehaviour
         if( collision.transform.tag.Contains("Gimmick"))
         {
             GimmickBehaviour behaviour = collision.transform.GetComponent<GimmickBehaviour>();
-            behaviour.GimmickActionEvent();
+            behaviour.OnTriggerActivation(this.gameObject);
         }
     }
 }

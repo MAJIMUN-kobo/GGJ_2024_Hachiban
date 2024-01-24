@@ -9,12 +9,12 @@ public class DontPushButton : GimmickBehaviour
     [SerializeField] private AudioClip   _gimmickSE;
 
     // [ Activate gimmick action, ]
-    public override void GimmickActionEvent( GameObject target = null )
+    public override void OnTriggerActivation( GameObject target = null )
     {
         Debug.Log("Don't push button gimmick.");
 
         _audioSelf.PlayOneShot( _gimmickSE );
 
-        base.GimmickActionEvent(target);
+        base.OnTriggerActivation(target);
     }
 }
