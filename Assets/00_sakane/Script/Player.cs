@@ -12,7 +12,11 @@ public class Player : MonoBehaviour
 	float moveSpeed;
 	// カメラの速度
 	[SerializeField]
-	float cameraSpeed;
+	Vector2 cameraSpeed;
+	// 可動域
+	[SerializeField]
+	float rangeOfMotion = 40;
+
 
 	// 移動値
 	Vector3 movevalue = Vector3.zero;
@@ -20,10 +24,8 @@ public class Player : MonoBehaviour
 	// 物理
 	Rigidbody rb;
 
+	// プレイヤーのカメラ
 	GameObject playerCamera;
-	// 可動域
-	[SerializeField]
-	float rangeOfMotion = 40;
 
 	private void Awake()
 	{
