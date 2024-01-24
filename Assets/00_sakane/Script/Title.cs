@@ -6,8 +6,8 @@ public class Title : MonoBehaviour
 	/// <summary>
 	/// ƒQ[ƒ€ŠJn
 	/// </summary>
-	public void GameStart()
+	public void GameStart(string name)
 	{
-		SceneLoader.Instance.LoadScene("MainScene").Forget();
+		SceneLoader.Instance.LoadScene(name).Forget();
 	}
 }
