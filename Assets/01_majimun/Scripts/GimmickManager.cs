@@ -32,4 +32,17 @@ public class GimmickManager : MonoBehaviour
     {
         
     }
+
+    #if UNITY_EDITOR
+    private void OnGUI()
+    {
+        string log = "Setting Gimmicks === \n";
+        foreach( GimmickBehaviour gimmick in  _playableGimmicks )
+        {
+            log += $" > { gimmick.transform.name }, Activate = { gimmick.IsActive }\n";
+        }
+
+        GUILayout.Label( log );
+    }
+    #endif
 }

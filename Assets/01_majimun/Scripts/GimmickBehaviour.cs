@@ -17,6 +17,6 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
         if( _activeAbsolute ) this.gameObject.SetActive( true );
     }
 
-    // [ Activate gimmick action, ]
+    // [ Activate gimmick action. ]
     public virtual void GimmickActionEvent(GameObject target = null) { }
 }
