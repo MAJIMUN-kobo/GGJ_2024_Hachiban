@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
 
 	// 移動速度
 	[SerializeField]
-	float speed;
+	float moveSpeed;
+	// カメラの速度
+	[SerializeField]
+	float cameraSpeed;
 
 	// 移動値
 	Vector3 movevalue = Vector3.zero;
@@ -18,6 +21,9 @@ public class Player : MonoBehaviour
 	Rigidbody rb;
 
 	GameObject playerCamera;
+	// 可動域
+	[SerializeField]
+	float rangeOfMotion = 40;
 
 	private void Awake()
 	{
@@ -32,7 +38,6 @@ public class Player : MonoBehaviour
 		// 入力のコールバック登録
 		input.Move.Move.performed += Move;
 		input.Move.Move.canceled += Stop;
-
 
 		input.Move.CameraMove.performed += CameraMove;
 
@@ -64,7 +69,7 @@ public class Player : MonoBehaviour
 		// 移動する方向
 		var vel = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
 		// 移動値の計算
-		movevalue = vel.normalized * speed;
+		movevalue = vel.normalized * moveSpeed;
 	}
 
 	/// <summary>
@@ -83,10 +88,18 @@ public class Player : MonoBehaviour
 	public void CameraMove(InputAction.CallbackContext context)
 	{
 		// 情報取得
-		Vector3 value = context.ReadValue<Vector2>();
+		Vector3 value = context.ReadValue<Vector2>() * cameraSpeed;
+		// 回転
+		transform.eulerAngles += new Vector3(0, value.x, 0);
 
-		transform.eulerAngles += new Vector3(0, value.y, 0);
+		var angle = playerCamera.transform.localEulerAngles + new Vector3(-value.y, 0, 0);
 
-		//playerCamera.transform.eulerAngles += value;
+		if (!((angle.x > rangeOfMotion) &&
+			(360 - rangeOfMotion > angle.x)))
+		{
+			// カメラの上下回転
+			playerCamera.transform.localEulerAngles += new Vector3(-value.y, 0, 0);
+			//playerCamera.transform.Rotate(new Vector3(value.y, 0, 0));
+		}
 	}
 }
