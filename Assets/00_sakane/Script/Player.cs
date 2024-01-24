@@ -17,9 +17,8 @@ public class Player : MonoBehaviour
 	[SerializeField]
 	float rangeOfMotion = 40;
 
-
 	// 移動値
-	Vector3 movevalue = Vector3.zero;
+	Vector3 inputValue = Vector3.zero;
 
 	// 物理
 	Rigidbody rb;
@@ -58,8 +57,16 @@ public class Player : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		// 前方の移動
+		var forward = transform.forward * inputValue.y;
+		// 横の移動
+		var right = transform.right * inputValue.x;
+		// 合計の移動
+		var vel = forward + right;
+		// 移動値の計算
+		var moveVal = vel.normalized * moveSpeed;
 		// 移動
-		rb.velocity = new Vector3(movevalue.x, rb.velocity.y, movevalue.z);
+		rb.velocity = new Vector3(moveVal.x, rb.velocity.y, moveVal.z);
 	}
 
 	/// <summary>
@@ -68,14 +75,7 @@ public class Player : MonoBehaviour
 	/// <param name="context">入力情報</param>
 	public void Move(InputAction.CallbackContext context)
 	{
-		// 前方の移動
-		var forward = transform.forward * context.ReadValue<Vector2>().y;
-		// 横の移動
-		var right = transform.right * context.ReadValue<Vector2>().x;
-		// 合計の移動
-		var vel = forward + right;
-		// 移動値の計算
-		movevalue = vel.normalized * moveSpeed;
+		inputValue = context.ReadValue<Vector2>();
 	}
 
 	/// <summary>
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 	/// <param name="context"></param>
 	public void Stop(InputAction.CallbackContext context)
 	{
-		movevalue = Vector3.zero;
+		inputValue = Vector3.zero;
 	}
 
 	/// <summary>
