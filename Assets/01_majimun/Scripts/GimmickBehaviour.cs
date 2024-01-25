@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
 {
     // [ Serialize ]
+    [SerializeField] private GimmickBehaviour _subGimmick;
     [SerializeField] private bool _activeAbsolute;
 
     // [ Property ]
@@ -18,11 +19,26 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     }
 
     // [ Activate gimmick action. ]
-    public virtual void OnTriggerActivation(GameObject target) { }
+    public virtual void OnTriggerActivation(GameObject target) 
+    {
+        SubActivation(target);
+    }
 
     // [ Activate gimmick action. ]
-    public virtual void OnLookAtActivation(GameObject target) { }
+    public virtual void OnLookAtActivation(GameObject target)
+    { 
+        SubActivation(target); 
+    }
 
     // [ Activate gimmick action. ]
-    public virtual void OnInputActivation(GameObject target) { }
+    public virtual void OnInputActivation(GameObject target)
+    { 
+        SubActivation(target); 
+    }
+
+    // [ Activate gimmick action. ]
+    public virtual void SubActivation(GameObject target) 
+    {
+        _subGimmick?.OnTriggerActivation(target);
+    }
 }
