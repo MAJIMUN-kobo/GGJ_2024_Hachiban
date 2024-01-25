@@ -116,7 +116,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""ba6b8ec3-e618-4864-af39-f8af349f0559"",
-                    ""path"": ""<Mouse>/delta/right"",
+                    ""path"": ""<Mouse>/delta/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -127,7 +127,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""b0a7d1b6-5045-4b11-b688-6f7e475afec7"",
-                    ""path"": ""<Mouse>/delta/left"",
+                    ""path"": ""<Mouse>/delta/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -138,7 +138,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""91d984fc-c4ea-4347-9af1-14ce7bedc5ef"",
-                    ""path"": ""<Mouse>/delta/up"",
+                    ""path"": ""<Mouse>/delta/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -149,7 +149,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""322d95ae-d0c4-412f-bd22-e1a256b6e141"",
-                    ""path"": ""<Mouse>/delta/down"",
+                    ""path"": ""<Mouse>/delta/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
