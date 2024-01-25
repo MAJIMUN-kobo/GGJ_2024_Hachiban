@@ -16,10 +16,6 @@ public class SceneLoader : MonoBehaviour
 	// true = レベルを移動することができる
 	static public bool canLevelMove = true;
 
-	// 読み込み中に表示するオブジェクト
-	[SerializeField]
-	GameObject loadingObject;
-
 	private void Awake()
 	{
 		Instance = this;
@@ -31,8 +27,6 @@ public class SceneLoader : MonoBehaviour
 	/// <param name="sceneName"></param>
 	public async UniTask LoadScene(string sceneName)
 	{
-		// ロード中を表示
-		loadingObject?.SetActive(true);
 		// シーンを移動しないようにする
 		canLevelMove = false;
 		// 読み込み開始
