@@ -490,7 +490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SisplayMode
+  m_text: Sisplay Mode
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5656587cb6d0ae4a91cb6ce955e0265, type: 2}
   m_sharedMaterial: {fileID: 805273619772464467, guid: e5656587cb6d0ae4a91cb6ce955e0265, type: 2}
