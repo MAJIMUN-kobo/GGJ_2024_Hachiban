@@ -73,6 +73,10 @@ crashlytics-build.properties
 
 # TMP
 /[Aa]ssets/[Tt]ext[Mm]esh [Pp]ro/
+/[Aa]ssets/[Hh]aroharo/[Ff]ont/
+
+# Excel Inporter
+/[Aa]ssets/[Ee]xcel[Ii]mporter/
 
 # Package
 /[Pp]ackages/
