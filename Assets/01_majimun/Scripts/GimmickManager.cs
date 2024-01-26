@@ -12,20 +12,30 @@ public class GimmickManager : MonoBehaviour
     {
         _playableGimmicks = Object.FindObjectsOfType<GimmickBehaviour>();
 
-        string log = "Setting Gimmicks === \n";
+        RandomActivationGimmicks();
+    }
+
+
+    public void Initialize()
+    {
+        RandomActivationGimmicks();
+    }
+
+    
+    // [ Random activation all gimmick ]
+    public void RandomActivationGimmicks()
+    {
         foreach( GimmickBehaviour gimmick in  _playableGimmicks )
         {
             // random activation.
             int r = Random.Range( 0, 100 );
-            if( r < 20 ) { gimmick.IsActive = false; }
-            else { gimmick.IsActive = true; } 
+            if( r < gimmick.GetActiveRate ) { gimmick.IsActive = true; }
+            else { gimmick.IsActive = false; } 
             
-            gimmick.Setup();
-
-            log += $" > { gimmick.transform.name }, Activate = { gimmick.IsActive }\n";
+            gimmick.Setup( this );
         }
-        Debug.Log( log );
     }
+
 
     // [ Frame Update ]
     void Update()
