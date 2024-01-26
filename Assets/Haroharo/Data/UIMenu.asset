@@ -18,13 +18,13 @@ MonoBehaviour:
     Japanese: "\u65E5\u672C\u8A9E"
   - id: 1
     English: Game Start
-    Japanese: "\u30B2\u30FC\u30E0\u3092\u59CB\u3081\u308B"
+    Japanese: "\u59CB\u3081\u308B"
   - id: 2
     English: Setting
     Japanese: "\u8A2D\u5B9A"
   - id: 3
     English: Game Exit
-    Japanese: "\u30B2\u30FC\u30E0\u3092\u7D42\u308F\u308B"
+    Japanese: "\u7D42\u308F\u308B"
   - id: 4
     English: Display
     Japanese: "\u30C7\u30A3\u30B9\u30D7\u30EC\u30A4"
@@ -60,4 +60,4 @@ MonoBehaviour:
     Japanese: SE
   - id: 15
     English: Return to the game
-    Japanese: "\u30B2\u30FC\u30E0\u306B\u623B\u308B"
+    Japanese: "\u623B\u308B"
