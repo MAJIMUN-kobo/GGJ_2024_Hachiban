@@ -9,8 +9,20 @@ public class Elevator : GimmickBehaviour
     {
         Debug.Log("Elevator gimmick.");
 
-        _gimmickManager.Initialize();
+        int discovered = _gimmickManager.gimmickDiscoveredCount;
+        if( discovered >= 1 )
+        {
+            _gimmickManager?.Initialize();
+            _gimmickManager.stageLevel++;
+        }
 
         base.OnTriggerActivation(target);
+    }
+
+    public override void OnLookAtActivation(GameObject target)
+    {
+        Debug.Log("Elevator look activate.");
+
+        base.OnLookAtActivation(target);
     }
 }

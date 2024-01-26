@@ -3,7 +3,32 @@ guid: ccab6c953a76b5142b230cd4847f02d9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: firehydrantbuttoncolor
+    second: {fileID: 2100000, guid: a8a52a4bd787f6c49a10756304c9deef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: firehydrantmaincolor
+    second: {fileID: 2100000, guid: d5eff8921f8f35b4e9b73793546e03bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: firehydrantramp
+    second: {fileID: 2100000, guid: 6cf7bfc88f02c5543b188de875f568d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hosecolor
+    second: {fileID: 2100000, guid: a527b797385534d40a4ba12dc2500de1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalcolor
+    second: {fileID: 2100000, guid: e32b7530e3738b3438e797b62004d312, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a193ca4ea093a47ba933f91cdcfca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _subGimmick: {fileID: 0}
+  _activeAbsolute: 0
+  _activeRate: 0
   _audioSelf: {fileID: 1600458454}
   _gimmickSE: {fileID: 8300000, guid: 749799a55e6896e4ca8f5893c1e3ab33, type: 3}
 --- !u!1 &6658734963037476379
@@ -318,7 +321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
