@@ -30,7 +30,10 @@ public class HumanFallGimmick : GimmickBehaviour
 	float angle;
 
 	// true = 追いかけている
-	bool isChasing;
+	bool isChasing = false;
+
+	// true = 止まる
+	bool isStop = false;
 
 	private void Awake()
 	{
@@ -39,23 +42,24 @@ public class HumanFallGimmick : GimmickBehaviour
 		animator = GetComponent<Animator>();
 
 #if UNITY_EDITOR
-		// デバッグ用
-		{
-			rb.velocity = transform.forward * movespeed;
-			StopRunning().Forget();
-		}
+		//// デバッグ用
+		//{
+		//	rb.velocity = transform.forward * movespeed;
+		//	StopRunning().Forget();
+		//}
 #endif
 	}
 
 	private void Update()
 	{
 		// 追いかけている時にターゲットが視界にいるか確認
-		if (isChasing)
+		if (isChasing && !isStop)
 		{
 			if (!IsVisibilityTarget())
 			{
 				// 視界から外れたら転ぶ
 				StopRunning().Forget();
+				isStop = true;
 			}
 		}
 	}
@@ -70,6 +74,8 @@ public class HumanFallGimmick : GimmickBehaviour
 		isChasing = true;
 		// ターゲット設定
 		this.target = target;
+
+		animator.SetTrigger("Start");
 	}
 
 	/// <summary>
@@ -113,5 +119,13 @@ public class HumanFallGimmick : GimmickBehaviour
 
 		// 視界判定
 		return innerProduct > cosHalf && targetDistance < distance;
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+        if (collision.gameObject.CompareTag("Player"))
+		{
+			OnTriggerActivation(collision.gameObject);
+		}
 	}
 }
