@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94a95434eb0c444dbe2770dd22b09ba, type: 3}
+  m_Name: UIMenu
+  m_EditorClassIdentifier: 
+  Sheet1:
+  - id: 0
+    English: English
+    Japanese: "\u65E5\u672C\u8A9E"
+  - id: 1
+    English: Game Start
+    Japanese: "\u59CB\u3081\u308B"
+  - id: 2
+    English: Setting
+    Japanese: "\u8A2D\u5B9A"
+  - id: 3
+    English: Game Exit
+    Japanese: "\u7D42\u308F\u308B"
+  - id: 4
+    English: Display
+    Japanese: "\u30C7\u30A3\u30B9\u30D7\u30EC\u30A4"
+  - id: 5
+    English: Audio
+    Japanese: "\u97F3\u58F0"
+  - id: 6
+    English: Language
+    Japanese: "\u8A00\u8A9E"
+  - id: 7
+    English: Display Size
+    Japanese: "\u753B\u9762\u30B5\u30A4\u30BA"
+  - id: 8
+    English: Sisplay Mode
+    Japanese: "\u753B\u9762\u30E2\u30FC\u30C9"
+  - id: 9
+    English: Full Screen
+    Japanese: "\u30D5\u30EB\u30B9\u30AF\u30EA\u30FC\u30F3"
+  - id: 10
+    English: Window
+    Japanese: "\u30A6\u30A3\u30F3\u30C9\u30A6"
+  - id: 11
+    English: Window Borderless
+    Japanese: "\u30DC\u30FC\u30C0\u30EC\u30B9\u30A6\u30A3\u30F3\u30C9\u30A6"
+  - id: 12
+    English: Master Audio
+    Japanese: "\u5168\u4F53\u97F3"
+  - id: 13
+    English: BGM
+    Japanese: BGM
+  - id: 14
+    English: SE
+    Japanese: SE
+  - id: 15
+    English: Return game
+    Japanese: "\u623B\u308B"
+  - id: 16
+    English: If you don't check whether the restroom is available,
+    Japanese: "\u30C8\u30A4\u30EC\u304C\u7A7A\u3044\u3066\u3044\u308B\u304B\u78BA\u8A8D\u3057\u306A\u3044\u3068"
+  - id: 17
+    English: press the E button and take action.
+    Japanese: "E\u30DC\u30BF\u30F3\u62BC\u3057\u3066\u884C\u52D5"
+  Text:
+  - id: 0
+    English: If you don't check whether the restroom is available,
+    Japanese: "\u30C8\u30A4\u30EC\u304C\u7A7A\u3044\u3066\u3044\u308B\u304B\u78BA\u8A8D\u3057\u306A\u3044\u3068"
+  - id: 1
+    English: press the E button and take action.
+    Japanese: "E\u30DC\u30BF\u30F3\u62BC\u3057\u3066\u884C\u52D5"

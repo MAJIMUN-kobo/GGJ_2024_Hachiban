@@ -1,21 +1,54 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
 {
     // [ Serialize ]
     [SerializeField] private GimmickBehaviour _subGimmick;
-    [SerializeField] private bool _activeAbsolute;
+    [SerializeField] private bool _activeAbsolute = false;
+    [SerializeField] private bool _oneShotPlay = false;
+    [SerializeField, Range(0, 100)]  private int _activeRate = 50;
+    [SerializeField] private float _lookSearchTime = 1;
 
     // [ Property ]
     public bool IsActive { get ; set;}
+    public bool BeingSeen { get; set; }
+    public int  GetActiveRate { get { return _activeRate; } }
+
+    protected GimmickManager _gimmickManager;
+    protected float _lookTimer;
+    protected float _nLookTimer;
+    protected bool  _canPlay;
+
+    private void FixedUpdate()
+    {
+        if( _nLookTimer == _lookTimer )
+        {
+            // Cancel
+            OnLookAtCanceled();
+            BeingSeen = false;
+        }
+        _lookTimer = _nLookTimer;
+    }
 
     // [ Initialize ]
-    public void Setup()
+    public void Setup(GimmickManager manager)
     {
+        if( _activeAbsolute ) IsActive = true;
         this.gameObject.SetActive( IsActive );
-        if( _activeAbsolute ) this.gameObject.SetActive( true );
+        _gimmickManager = manager;
+
+        _canPlay = true;
+    }
+
+    public void Wakeup()
+    {
+        IsActive = true;
+        this.gameObject.SetActive(IsActive);
     }
 
     // [ Activate gimmick action. ]
@@ -27,7 +60,27 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     // [ Activate gimmick action. ]
     public virtual void OnLookAtActivation(GameObject target)
     { 
-        SubActivation(target); 
+        SubActivation(target);
+    }
+
+    public void LookAtUpdate(GameObject target)
+    {
+        BeingSeen = true;
+
+        _nLookTimer = _lookTimer;
+        _nLookTimer += Time.deltaTime;
+        if(_nLookTimer >= _lookSearchTime )
+        {
+            _nLookTimer = 0;
+            _lookTimer = 0;
+            OnLookAtActivation(target);
+        }
+    }
+
+    public void OnLookAtCanceled()
+    {
+        _lookTimer = 0;
+        _nLookTimer = 0;
     }
 
     // [ Activate gimmick action. ]
