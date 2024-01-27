@@ -7,4 +7,5 @@ using UnityEngine;
 public class UIMenu : ScriptableObject
 {
 	public List<UIMenuEntity> Sheet1; // Replace 'EntityType' to an actual type that is serializable.
+	public List<UIMenuEntity> Text; 
 }
