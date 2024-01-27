@@ -59,5 +59,18 @@ MonoBehaviour:
     English: SE
     Japanese: SE
   - id: 15
-    English: Return to the game
+    English: Return game
     Japanese: "\u623B\u308B"
+  - id: 16
+    English: If you don't check whether the restroom is available,
+    Japanese: "\u30C8\u30A4\u30EC\u304C\u7A7A\u3044\u3066\u3044\u308B\u304B\u78BA\u8A8D\u3057\u306A\u3044\u3068"
+  - id: 17
+    English: press the E button and take action.
+    Japanese: "E\u30DC\u30BF\u30F3\u62BC\u3057\u3066\u884C\u52D5"
+  Text:
+  - id: 0
+    English: If you don't check whether the restroom is available,
+    Japanese: "\u30C8\u30A4\u30EC\u304C\u7A7A\u3044\u3066\u3044\u308B\u304B\u78BA\u8A8D\u3057\u306A\u3044\u3068"
+  - id: 1
+    English: press the E button and take action.
+    Japanese: "E\u30DC\u30BF\u30F3\u62BC\u3057\u3066\u884C\u52D5"

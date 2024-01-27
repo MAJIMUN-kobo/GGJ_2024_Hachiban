@@ -8,4 +8,5 @@ public class ExcelDataManager : MonoBehaviour
     /// UIƒƒjƒ…[
     /// </summary>
     public UIMenu uiMenu;
+    public UIMenu messageText;
 }
