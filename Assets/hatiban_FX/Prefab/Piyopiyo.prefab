@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3536930002134561682}
-  - component: {fileID: 2501825994344284342}
-  - component: {fileID: 1056987512210355374}
+  - component: {fileID: 703708735}
+  - component: {fileID: 703708734}
   m_Layer: 0
   m_Name: Piyopiyo
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &2501825994344284342
+--- !u!198 &703708735
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4741,7 +4741,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &1056987512210355374
+--- !u!199 &703708734
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4762,7 +4762,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4854,7 +4854,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3190655000778539273}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 2.3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4929,7 +4929,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.2
+      scalar: 1.5
       minScalar: 0.7
       maxCurve:
         serializedVersion: 2
@@ -5036,7 +5036,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.94274944, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6185,10 +6185,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.5176471}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.97282606}
         key2: {r: 0, g: 0, b: 0, a: 1}
-        key3: {r: 0, g: 0, b: 0, a: 1}
+        key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 1}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -6202,8 +6202,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 32575
-        atime2: 65535
+        atime1: 14071
+        atime2: 51850
         atime3: 65535
         atime4: 65535
         atime5: 65535
@@ -6211,7 +6211,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

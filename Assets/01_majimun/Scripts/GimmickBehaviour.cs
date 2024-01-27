@@ -15,6 +15,7 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
 
     // [ Property ]
     public bool IsActive { get ; set;}
+    public bool BeingSeen { get; set; }
     public int  GetActiveRate { get { return _activeRate; } }
 
     protected GimmickManager _gimmickManager;
