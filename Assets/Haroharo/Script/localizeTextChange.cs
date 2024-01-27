@@ -24,12 +24,16 @@ public class localizeTextChange : MonoBehaviour
     private Sprite EN_Image;
 
     private Language language= Language.Japanese;
+
+    private SettingManager settingManager;
     private UIMenu uIMenu;
     private TextMeshProUGUI text = null;
     private Image image = null;
 
     private void Awake()
     {
+        settingManager=GameObject.Find("SettingManager").GetComponent<SettingManager>();
+
         if (is_image)
         {
             image = GetComponent<Image>();
@@ -42,6 +46,17 @@ public class localizeTextChange : MonoBehaviour
     }
 
     private void Start()
+    {
+        LanguageChange();
+    }
+
+    private void OnEnable()
+    {
+        language = (Language)settingManager.LanguageMode;
+        LanguageChange();
+    }
+
+    public void LanguageChange()
     {
         switch (language)
         {

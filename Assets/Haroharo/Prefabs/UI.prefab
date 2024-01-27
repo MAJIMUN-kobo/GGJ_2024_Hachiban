@@ -3590,7 +3590,7 @@ GameObject:
   - component: {fileID: 2551874778226368288}
   - component: {fileID: 2551874778226368289}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: SisplaySizeDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3713,7 +3713,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: displaySizeSetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874778226368289}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &2551874778226581227
 GameObject:
@@ -3725,6 +3737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2551874778226581228}
   - component: {fileID: 2551874778226581226}
+  - component: {fileID: 9181372887948248931}
   m_Layer: 5
   m_Name: UICamera
   m_TagString: Untagged
@@ -3790,6 +3803,39 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &9181372887948248931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551874778226581227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2551874778227765358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,7 +4891,7 @@ GameObject:
   - component: {fileID: 2551874778533753654}
   - component: {fileID: 2551874778533753655}
   m_Layer: 5
-  m_Name: Dropdown (1)
+  m_Name: SisplayModeDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4871,8 +4917,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -50}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 208.57858, y: -50}
+  m_SizeDelta: {x: 227.157, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2551874778533753641
 CanvasRenderer:
@@ -4970,7 +5016,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: displayModeSetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874778533753655}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &2551874778599203803
 GameObject:
@@ -8320,7 +8378,7 @@ GameObject:
   - component: {fileID: 2551874779429695623}
   - component: {fileID: 2551874779429695620}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: LanguageDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8443,7 +8501,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: LanguageSetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874779429695620}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &2551874779452043162
 GameObject:
@@ -8947,7 +9017,7 @@ GameObject:
   - component: {fileID: 2551874779573318163}
   - component: {fileID: 2551874779573318162}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: MasterAudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9023,10 +9093,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: mastarAudioSetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874779573318162}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2551874779620977713
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,7 +9585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b262579fc36604e9fd4dbd98e87335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  languge: 0
+  LanguageMode: 0
+  Master_Audio: 0
+  BGM_Audio: 0
+  SE_Audio: 0
 --- !u!1 &2551874779721063718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9515,7 +9600,7 @@ GameObject:
   - component: {fileID: 2551874779721063705}
   - component: {fileID: 2551874779721063704}
   m_Layer: 5
-  m_Name: Slider (2)
+  m_Name: SESlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9591,10 +9676,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: SESetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874779721063704}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2551874779738001782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9907,7 +10004,7 @@ GameObject:
   - component: {fileID: 2551874779755439204}
   - component: {fileID: 2551874779755439207}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: BGMSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9983,7 +10080,19 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2551874779715550691}
+        m_TargetAssemblyTypeName: SettingManager, Assembly-CSharp
+        m_MethodName: BGMSetting
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2551874779755439207}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
