@@ -10,6 +10,7 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     // [ Serialize ]
     [SerializeField] private GimmickBehaviour _subGimmick;
     [SerializeField] private bool _activeAbsolute = false;
+    [SerializeField] private bool _oneShotPlay = false;
     [SerializeField, Range(0, 100)]  private int _activeRate = 50;
     [SerializeField] private float _lookSearchTime = 1;
 
@@ -21,6 +22,7 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     protected GimmickManager _gimmickManager;
     protected float _lookTimer;
     protected float _nLookTimer;
+    protected bool  _canPlay;
 
     private void FixedUpdate()
     {
@@ -39,6 +41,14 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
         if( _activeAbsolute ) IsActive = true;
         this.gameObject.SetActive( IsActive );
         _gimmickManager = manager;
+
+        _canPlay = true;
+    }
+
+    public void Wakeup()
+    {
+        IsActive = true;
+        this.gameObject.SetActive(IsActive);
     }
 
     // [ Activate gimmick action. ]
@@ -56,6 +66,7 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     public void LookAtUpdate(GameObject target)
     {
         BeingSeen = true;
+
         _nLookTimer = _lookTimer;
         _nLookTimer += Time.deltaTime;
         if(_nLookTimer >= _lookSearchTime )
