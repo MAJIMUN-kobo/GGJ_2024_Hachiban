@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         TitleObj = GameObject.Find("Title");
-        InGameObj = GameObject.Find("Pause");
+        InGameObj = GameObject.Find("InGame");
         PauseObj = GameObject.Find("Pause");
         SettingObj = GameObject.Find("Setting");
         SettingDisplayObj = GameObject.Find("display");
@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(transform.root.gameObject);
 
         TitleObj.SetActive(true);
+        InGameObj.SetActive(false);
         PauseObj.SetActive(false);
         SettingObj.SetActive(false);
         SettingDisplayObj.SetActive(false);
