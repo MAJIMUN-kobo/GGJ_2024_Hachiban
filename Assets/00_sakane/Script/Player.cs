@@ -107,4 +107,14 @@ public class Player : MonoBehaviour
 			playerCamera.transform.localEulerAngles += new Vector3(-value.y, 0, 0);
 		}
 	}
+
+	public void InuptDisable()
+	{
+		input.Disable();
+	}
+
+	public void InuptEnable()
+	{
+		input.Enable();
+	}
 }

@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fall Flat
       objectReference: {fileID: 0}
+    - target: {fileID: 1684325205521447795, guid: 0737ff31097772948bb1c945e1b9f356, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2023308606407434697, guid: 0737ff31097772948bb1c945e1b9f356, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -429,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3776647413231927424, guid: 1d012251252ca164c8c3244c5208d690, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3776647413231927424, guid: 1d012251252ca164c8c3244c5208d690, type: 3}
       propertyPath: m_LocalPosition.y
@@ -437,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3776647413231927424, guid: 1d012251252ca164c8c3244c5208d690, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3776647413231927424, guid: 1d012251252ca164c8c3244c5208d690, type: 3}
       propertyPath: m_LocalRotation.w
