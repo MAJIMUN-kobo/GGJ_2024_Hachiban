@@ -62,7 +62,7 @@ public class GimmickManager : MonoBehaviour
         string log = "Setting Gimmicks === \n";
         foreach( GimmickBehaviour gimmick in  _playableGimmicks )
         {
-            log += $" > { gimmick.transform.name }, Activate = { gimmick.IsActive }\n";
+            log += $" > { gimmick.transform.name }, Activate = { gimmick.IsActive }, BeingLookAt = { gimmick.BeingSeen }\n";
         }
 
         log += "\nGame Level ===\n";
