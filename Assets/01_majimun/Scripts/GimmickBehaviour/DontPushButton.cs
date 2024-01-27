@@ -8,6 +8,9 @@ public class DontPushButton : GimmickBehaviour
     [SerializeField] private AudioSource _audioSelf;
     [SerializeField] private AudioClip   _gimmickSE;
 
+
+
+
     // [ Activate gimmick action, ]
     public override void OnTriggerActivation( GameObject target = null )
     {

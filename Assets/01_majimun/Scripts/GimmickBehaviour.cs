@@ -26,7 +26,9 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     {
         if( _nLookTimer == _lookTimer )
         {
+            // Cancel
             OnLookAtCanceled();
+            BeingSeen = false;
         }
         _lookTimer = _nLookTimer;
     }
@@ -53,6 +55,7 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
 
     public void LookAtUpdate(GameObject target)
     {
+        BeingSeen = true;
         _nLookTimer = _lookTimer;
         _nLookTimer += Time.deltaTime;
         if(_nLookTimer >= _lookSearchTime )

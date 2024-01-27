@@ -6,12 +6,14 @@ public class GimmickCollider : MonoBehaviour
 {
     private Player _self;
     private GameSceneManager _gameManager;
+    private Transform _mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         _self = GetComponent<Player>();
         _gameManager = GameObject.FindObjectOfType<GameSceneManager>();
+        _mainCamera = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class GimmickCollider : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit[] targets = Physics.BoxCastAll(transform.position, Vector3.one/10, transform.forward, Quaternion.identity, 5f);
+        // Look Target;
+        RaycastHit[] targets = Physics.BoxCastAll(_mainCamera.position, Vector3.one/10, _mainCamera.forward, Quaternion.identity, 5f);
         foreach (RaycastHit target in targets) 
         {
             if( target.transform.tag.Contains("Gimmick"))
