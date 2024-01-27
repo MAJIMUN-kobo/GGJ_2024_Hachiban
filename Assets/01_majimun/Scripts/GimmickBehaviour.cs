@@ -38,10 +38,16 @@ public abstract class GimmickBehaviour : MonoBehaviour, IGimmick
     // [ Initialize ]
     public void Setup(GimmickManager manager)
     {
-        if( _activeAbsolute ) IsActive = true;
-        this.gameObject.SetActive( IsActive );
+        if( _activeAbsolute ) 
+        {
+            this.gameObject.SetActive( true );
+            this.GetComponent<Collider>().isTrigger = IsActive;
+        }
+        else
+        {
+            this.gameObject.SetActive( IsActive );
+        }
         _gimmickManager = manager;
-
         _canPlay = true;
     }
 
