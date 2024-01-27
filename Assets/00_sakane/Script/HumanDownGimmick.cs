@@ -12,12 +12,30 @@ public class HumanDownGimmick : GimmickBehaviour
 	[SerializeField]
 	float speed;
 
+	[SerializeField]
+	float adjustment;
+
 	private void Awake()
 	{
 		// アニメーション取得
 		animator = GetComponent<Animator>();
 		// 物理取得
 		rb = GetComponent<Rigidbody>();
+
+#if UNITY_EDITOR
+
+		Run();
+
+#endif
+	}
+
+	private void FixedUpdate()
+	{
+		if (isRunning)
+		{
+			// 移動
+			rb.velocity = transform.forward * speed;
+		}
 	}
 
 	private void OnCollisionEnter(Collision collision)
@@ -27,6 +45,8 @@ public class HumanDownGimmick : GimmickBehaviour
 			!collision.gameObject.CompareTag("Player") &&
 			isRunning)
 		{
+			transform.position += transform.forward * adjustment;
+			transform.localEulerAngles += new Vector3(0, 180, 0);
 			// アニメーション再生
 			animator.SetTrigger("Down");
 			// 動きを止める
@@ -47,7 +67,7 @@ public class HumanDownGimmick : GimmickBehaviour
 	{
 		// 走るアニメーション
 		animator.SetTrigger("Run");
-		// 移動開始
-		rb.velocity = transform.forward * speed;
+
+		isRunning = true;
 	}
 }

@@ -1392,6 +1392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4640563044949403446}
+  - component: {fileID: 1347129187346165853}
   - component: {fileID: 3858465290403463387}
   - component: {fileID: 2093911809476393250}
   - component: {fileID: 5778802427533543867}
@@ -1420,6 +1421,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1347129187346165853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417064182018473356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e4d67c9f579d634b9901ce4db4ed0de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &3858465290403463387
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1433,7 +1455,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!54 &2093911809476393250
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1464,7 +1486,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subGimmick: {fileID: 0}
   _activeAbsolute: 0
-  speed: 2
+  _oneShotPlay: 0
+  _activeRate: 50
+  _lookSearchTime: 1
+  speed: 20
+  adjustment: 1.5
 --- !u!1 &5777082679719047254
 GameObject:
   m_ObjectHideFlags: 0
