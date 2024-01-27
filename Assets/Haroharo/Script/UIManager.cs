@@ -23,7 +23,9 @@ public class UIManager : MonoBehaviour
     private GameObject SettingLanguageObj;
 
     private bool isSetting;
-    private bool isPause;
+  Å@public bool isPause;
+
+    Camera MainCamera;
 
     private void Awake()
     {
@@ -48,7 +50,7 @@ public class UIManager : MonoBehaviour
         SettingObj.SetActive(false);
         SettingDisplayObj.SetActive(false);
         SettingAudioObj.SetActive(false);
-        SettingLanguageObj.SetActive(false);
+        SettingLanguageObj.SetActive(false); 
     }
 
     private void Update()

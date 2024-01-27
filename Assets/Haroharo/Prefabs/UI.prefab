@@ -3818,7 +3818,7 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
+  m_CameraType: 1
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -5574,6 +5574,7 @@ Transform:
   - {fileID: 2551874779715550688}
   - {fileID: 2551874778930043894}
   - {fileID: 2551874778226581228}
+  - {fileID: 7199835944701455146}
   - {fileID: 2551874778978917451}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5622,6 +5623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88737c97949d3b4aaba8444cfe11870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPause: 0
 --- !u!1 &2551874778744563006
 GameObject:
   m_ObjectHideFlags: 0
@@ -6670,7 +6672,7 @@ RectTransform:
   - {fileID: 2551874777904015984}
   - {fileID: 2551874779753865727}
   m_Father: {fileID: 2551874778711293034}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7118,10 +7120,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2551874778721159813}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SettingBackButton
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2551874779100556781}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9586,9 +9588,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LanguageMode: 0
-  Master_Audio: 0
-  BGM_Audio: 0
-  SE_Audio: 0
+  Master_Audio: 1
+  BGM_Audio: 1
+  SE_Audio: 1
 --- !u!1 &2551874779721063718
 GameObject:
   m_ObjectHideFlags: 0
@@ -10096,3 +10098,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &7660932623672808214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7199835944701455146}
+  - component: {fileID: 8140608176917485434}
+  m_Layer: 5
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7199835944701455146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660932623672808214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2551874778711293034}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8140608176917485434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660932623672808214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc0dcf8b81370e4aaa8fca18e8aeb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM_Source: {fileID: 2052260585657424357, guid: f33b0cbe89a040b4c9e557ee5c10b0a6, type: 3}
+  SE_Source: {fileID: 2333563991711827487, guid: 54a39c60972d03e4e8feeeb3cce58d8c, type: 3}
