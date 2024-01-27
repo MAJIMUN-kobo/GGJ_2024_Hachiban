@@ -12,7 +12,7 @@ public class OfficeDoor : GimmickBehaviour
     // [ Activate gimmick action. ]
     public override void OnTriggerActivation(GameObject target = null)
     {
-        _timeline.Play();
+        //_timeline.Play();
         _doorAudio.PlayOneShot(_doorSE);
 
         Debug.Log("Office Door!!");

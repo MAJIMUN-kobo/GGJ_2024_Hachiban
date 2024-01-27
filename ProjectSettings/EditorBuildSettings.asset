@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00_sakane/Scene/TitleScene.unity
-    guid: 1e466c0fb900e22478748ab561475837
+    path: Assets/99_Playable/Scenes/TitleScene.unity
+    guid: 353ee034115efcc4b8f9cd191fe823ce
   - enabled: 1
-    path: Assets/01_majimun/Scenes/DemoGimmickRoom.unity
-    guid: 02cb5ef63eec843458da9063239d814d
+    path: Assets/99_Playable/Scenes/PlayableScene.unity
+    guid: 70176b8d56ce4af4184c3d278050235f
   m_configObjects: {}
