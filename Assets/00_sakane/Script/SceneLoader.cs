@@ -1,4 +1,6 @@
 using Cysharp.Threading.Tasks;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,12 +29,14 @@ public class SceneLoader : MonoBehaviour
 	/// <param name="sceneName"></param>
 	public async UniTask LoadScene(string sceneName)
 	{
+		var token = this.GetCancellationTokenOnDestroy();
+
 		// シーンを移動しないようにする
 		canLevelMove = false;
 		// 読み込み開始
-		OpenScene(sceneName).Forget();
+		OpenScene(sceneName, token).Forget();
 		// 読み込みが終了するまで待つ
-		await UniTask.WaitUntil(() => { return IsLevelLoading; });
+		await UniTask.WaitUntil(() => { return IsLevelLoading; }, cancellationToken: token);
 		// シーン移動を可能にする
 		canLevelMove = true;
 	}
@@ -42,7 +46,7 @@ public class SceneLoader : MonoBehaviour
 	/// </summary>
 	/// <param name="levelName">シーン名</param>
 	/// <returns></returns>
-	public static async UniTaskVoid OpenScene(string levelName)
+	public static async UniTaskVoid OpenScene(string levelName, CancellationToken token)
 	{
 		// 読み込み中にする
 		isLevelLoading = true;
@@ -51,11 +55,11 @@ public class SceneLoader : MonoBehaviour
 		// 移動できない状態にする
 		operation.allowSceneActivation = false;
 		// 読み込みが終了するまで待つ
-		await UniTask.WaitUntil(() => operation.progress >= 0.9f);
+		await UniTask.WaitUntil(() => operation.progress >= 0.9f, cancellationToken: token);
 		// 読み込み中を解除
 		isLevelLoading = false;
 		// 移動できる状態になるまで待つ
-		await UniTask.WaitUntil(() => canLevelMove);
+		await UniTask.WaitUntil(() => canLevelMove, cancellationToken: token);
 		// 移動できる状態にする
 		operation.allowSceneActivation = true;
 	}

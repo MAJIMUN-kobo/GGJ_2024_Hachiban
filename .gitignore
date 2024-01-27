@@ -71,9 +71,16 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# TMP
+/[Aa]ssets/[Tt]ext[Mm]esh [Pp]ro/
+/[Aa]ssets/[Hh]aroharo/[Ff]ont/
+
+# Excel Inporter
+/[Aa]ssets/[Ee]xcel[Ii]mporter/
+
 # Package
 /[Pp]ackages/
-/[Pp]ackages/[Tt]ext[Mm]esh[Pp]ro]/
+/[Pp]ackages/[Tt]ext[Mm]esh[Pp]ro/
 Assets/Haroharo/image/UIicon.unitypackage.meta
 Assets/Haroharo/image/White Black GUI/
 Assets/TextMesh Pro.meta

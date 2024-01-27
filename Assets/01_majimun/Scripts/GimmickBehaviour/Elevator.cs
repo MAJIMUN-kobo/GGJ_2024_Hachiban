@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Elevator : GimmickBehaviour
 {
-    // [ Update ]
-    private void Update()
-    {
-        IsActive = true;
-    }
-
     // [ Activate gimmick action, ]
     public override void OnTriggerActivation(GameObject target = null)
     {
         Debug.Log("Elevator gimmick.");
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("DemoGimmickRoom");
+        int discovered = _gimmickManager.gimmickDiscoveredCount;
+        if( discovered >= 1 )
+        {
+            _gimmickManager?.Initialize();
+            _gimmickManager.stageLevel++;
+        }
 
         base.OnTriggerActivation(target);
+    }
+
+    public override void OnLookAtActivation(GameObject target)
+    {
+        Debug.Log("Elevator look activate.");
+
+        base.OnLookAtActivation(target);
     }
 }

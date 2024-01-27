@@ -10,6 +10,7 @@ public class Toilet : GimmickBehaviour
     public override void OnTriggerActivation(GameObject target)
     {
         _toiletAudio.PlayOneShot( _flushSE );
+        _gimmickManager.gimmickDiscoveredCount++;
 
         base.OnTriggerActivation(target);
     }
