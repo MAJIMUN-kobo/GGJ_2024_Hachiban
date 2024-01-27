@@ -42,11 +42,11 @@ public class HumanFallGimmick : GimmickBehaviour
 		animator = GetComponent<Animator>();
 
 #if UNITY_EDITOR
-		//// デバッグ用
-		//{
-		//	rb.velocity = transform.forward * movespeed;
-		//	StopRunning().Forget();
-		//}
+		// デバッグ用
+		{
+			target = GameObject.Find("Player");
+			OnLookAtActivation(target);
+		}
 #endif
 	}
 
@@ -67,14 +67,13 @@ public class HumanFallGimmick : GimmickBehaviour
 	public override void OnLookAtActivation(GameObject target)
 	{
 		// 方向
-		var direction = transform.position - target.transform.position;
+		var direction = target.transform.position - transform.position;
 		// 移動
 		rb.velocity = direction * movespeed;
 		// 追いかけ始める
 		isChasing = true;
 		// ターゲット設定
 		this.target = target;
-
 		animator.SetTrigger("Start");
 	}
 
@@ -90,6 +89,10 @@ public class HumanFallGimmick : GimmickBehaviour
 		await UniTask.WaitForSeconds(fallTime, cancellationToken: token);
 		// アニメーション再生
 		animator.SetTrigger("Fall");
+
+		rb.isKinematic = true;
+		rb.useGravity = false;
+		GetComponent<Collider>().enabled = false;
 	}
 
 	/// <summary>
