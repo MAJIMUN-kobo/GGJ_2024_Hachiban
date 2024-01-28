@@ -35,6 +35,9 @@ public class HumanFallGimmick : GimmickBehaviour
 	// true = 止まる
 	bool isStop = false;
 
+	// 方向
+	Vector3 direction;
+
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
@@ -64,12 +67,19 @@ public class HumanFallGimmick : GimmickBehaviour
 		}
 	}
 
+	private void FixedUpdate()
+	{
+		if(isChasing)
+		{
+			// 移動
+			rb.velocity = direction * movespeed;
+		}
+	}
+
 	public override void OnLookAtActivation(GameObject target)
 	{
 		// 方向
-		var direction = target.transform.position - transform.position;
-		// 移動
-		rb.velocity = direction * movespeed;
+		direction = target.transform.position - transform.position;
 		// 追いかけ始める
 		isChasing = true;
 		// ターゲット設定
