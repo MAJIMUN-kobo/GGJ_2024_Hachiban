@@ -69,10 +69,11 @@ public class HumanFallGimmick : GimmickBehaviour
 
 	private void FixedUpdate()
 	{
-		if(isChasing)
+		if (isChasing)
 		{
+			var movevalue = direction * movespeed;
 			// ˆÚ“®
-			rb.velocity = direction * movespeed;
+			rb.velocity = new Vector3(movevalue.x, rb.velocity.y, movevalue.z);
 		}
 	}
 
@@ -136,7 +137,7 @@ public class HumanFallGimmick : GimmickBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        if (collision.gameObject.CompareTag("Player"))
+		if (collision.gameObject.CompareTag("Player"))
 		{
 			OnTriggerActivation(collision.gameObject);
 		}

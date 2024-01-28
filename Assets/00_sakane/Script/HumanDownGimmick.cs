@@ -33,8 +33,9 @@ public class HumanDownGimmick : GimmickBehaviour
 	{
 		if (isRunning)
 		{
+			var movevalue = transform.forward * speed;
 			// ˆÚ“®
-			rb.velocity = transform.forward * speed;
+			rb.velocity = new Vector3(movevalue.x, rb.velocity.y, movevalue.z);
 		}
 	}
 
