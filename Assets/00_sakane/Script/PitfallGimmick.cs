@@ -1,10 +1,14 @@
+using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 
 public class PitfallGimmick : GimmickBehaviour
 {
-	// è∞
 	[SerializeField]
-	GameObject floor;
+	GameObject panel1;
+
+	[SerializeField]
+	GameObject panel2;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -16,6 +20,20 @@ public class PitfallGimmick : GimmickBehaviour
 
 	public override void OnTriggerActivation(GameObject target)
 	{
-		floor.SetActive(false);
+		var token = this.GetCancellationTokenOnDestroy();
+
+		Fall(token).Forget();
+	}
+
+	/// <summary>
+	/// óéÇ∆Ç∑
+	/// </summary>
+	async UniTask Fall(CancellationToken token)
+	{
+		var angle = 0.0f;
+		while (true)
+		{
+			panel1.transform.localEulerAngles = new Vector3(0, 0, angle);
+		}
 	}
 }
