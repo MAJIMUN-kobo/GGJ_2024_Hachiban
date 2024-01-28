@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
 	// プレイヤーのカメラ
 	GameObject playerCamera;
 
+	Vector3 cameraLotationValue = Vector3.zero;
+
+	Vector3 playerLotationValue = Vector3.zero;
+
 	private void Awake()
 	{
 		// 物理取得
@@ -67,6 +71,11 @@ public class Player : MonoBehaviour
 		var moveVal = vel.normalized * moveSpeed;
 		// 移動
 		rb.velocity = new Vector3(moveVal.x, rb.velocity.y, moveVal.z);
+
+		playerCamera.transform.localEulerAngles += cameraLotationValue;
+		cameraLotationValue = Vector3.zero;
+		transform.localEulerAngles += playerLotationValue;
+		playerLotationValue = Vector3.zero;
 	}
 
 	/// <summary>
@@ -96,7 +105,7 @@ public class Player : MonoBehaviour
 		// 情報取得
 		Vector3 value = context.ReadValue<Vector2>() * cameraSpeed;
 		// 回転
-		transform.eulerAngles += new Vector3(0, value.x, 0);
+		playerLotationValue += new Vector3(0, value.x, 0);
 
 		var angle = playerCamera.transform.localEulerAngles + new Vector3(-value.y, 0, 0);
 
@@ -104,7 +113,7 @@ public class Player : MonoBehaviour
 			(360 - rangeOfMotion > angle.x)))
 		{
 			// カメラの上下回転
-			playerCamera.transform.localEulerAngles += new Vector3(-value.y, 0, 0);
+			cameraLotationValue += new Vector3(-value.y, 0, 0);
 		}
 	}
 
