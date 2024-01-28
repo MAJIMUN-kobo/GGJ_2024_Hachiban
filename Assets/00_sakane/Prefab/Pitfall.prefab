@@ -327,3 +327,4 @@ MonoBehaviour:
   _lookSearchTime: 1
   panel1: {fileID: 2493969249790459416}
   panel2: {fileID: 2954630306658536676}
+  speed: 0.07

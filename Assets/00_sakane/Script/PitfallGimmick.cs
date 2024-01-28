@@ -9,6 +9,8 @@ public class PitfallGimmick : GimmickBehaviour
 
 	[SerializeField]
 	GameObject panel2;
+	[SerializeField]
+	float speed;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -30,10 +32,15 @@ public class PitfallGimmick : GimmickBehaviour
 	/// </summary>
 	async UniTask Fall(CancellationToken token)
 	{
-		var angle = 0.0f;
+		var t = 0.0f;
 		while (true)
 		{
-			panel1.transform.localEulerAngles = new Vector3(0, 0, angle);
+			t += speed;
+			var angle = Mathf.Lerp(0, 90f, t);
+			panel1.transform.localEulerAngles = new Vector3(0, 0, -angle);
+			panel2.transform.localEulerAngles = new Vector3(0, 0, angle);
+
+			await UniTask.DelayFrame(1, cancellationToken: token);
 		}
 	}
 }
