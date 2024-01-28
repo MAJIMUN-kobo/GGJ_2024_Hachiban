@@ -113,6 +113,7 @@ public class UIManager : MonoBehaviour
                 break;
 
             case GameState.IN_GAME:
+                
                 PauseObj.SetActive(true);
                 SettingObj.SetActive(false);
                 SettingDisplayObj.SetActive(false);
@@ -161,17 +162,19 @@ public class UIManager : MonoBehaviour
     /// </summary>
     private void InGameScene()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPause)
+        if (Input.GetKeyDown(KeyCode.Escape) && isPause == true)
         {
             Time.timeScale = 1;
-            PauseObj.SetActive(true);
+            PauseObj.SetActive(false);
+            Debug.Log("ポーズ解除");
             isPause = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
         {
             Time.timeScale = 0;
-            PauseObj.SetActive(false);
+            PauseObj.SetActive(true);
+            Debug.Log("ポーズ中");
             isPause = true;
         }
     }
@@ -182,7 +185,7 @@ public class UIManager : MonoBehaviour
     public void ReturnGame()
     {
         Time.timeScale = 1;
-        PauseObj.SetActive(true);
+        PauseObj.SetActive(false);
         isPause = false;
     }
 
