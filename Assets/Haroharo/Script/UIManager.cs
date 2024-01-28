@@ -191,7 +191,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void StartGameButton()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneLoader.Instance.LoadScene("PlayableScene");
         gameState = GameState.IN_GAME;
     }
 
