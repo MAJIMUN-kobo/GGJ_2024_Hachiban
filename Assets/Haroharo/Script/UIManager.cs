@@ -112,9 +112,9 @@ public class UIManager : MonoBehaviour
                 SettingLanguageObj.SetActive(false);
                 break;
 
-            case GameState.IN_GAME:
-                
+            case GameState.IN_GAME:               
                 PauseObj.SetActive(true);
+                TitleObj.SetActive(false);
                 SettingObj.SetActive(false);
                 SettingDisplayObj.SetActive(false);
                 SettingAudioObj.SetActive(false);
@@ -196,8 +196,8 @@ public class UIManager : MonoBehaviour
     {
         TitleObj.SetActive(false);
         InGameObj.SetActive(true);
-        SceneManager.LoadScene("PlayableScene");
         gameState = GameState.IN_GAME;
+        SceneManager.LoadScene("PlayableScene");
     }
 
     /// <summary>
