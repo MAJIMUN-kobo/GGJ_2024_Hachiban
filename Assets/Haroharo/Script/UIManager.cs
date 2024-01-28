@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
             case GameState.IN_GAME:
                 InGameScene();
                 SettingBackKey();
+                TitleObj.SetActive(false);
                 break;
             default:
                 break;
