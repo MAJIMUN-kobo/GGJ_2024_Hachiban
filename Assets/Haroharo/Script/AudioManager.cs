@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="SE_Name">ループで消す場合は絶対に必要</param>
     public void SEPlay(int id,bool loop,string SE_Name = "SE")
     {
-        var SE_Obj = Instantiate(BGM_Source,mainCamera.transform.parent);
+        var SE_Obj = Instantiate(SE_Source, gameObject.transform.parent);
         SE_Obj.transform.localPosition = Vector3.zero;
         SE_Obj.name = SE_Name;
 

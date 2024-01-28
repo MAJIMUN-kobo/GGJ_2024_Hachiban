@@ -37,7 +37,6 @@ public class ToiletDoor : GimmickBehaviour
 
         _audioSelf.PlayOneShot( _gimmickSE );
         _animator.SetTrigger("DoorAction");
-        Debug.Log("hoge");
 
         base.OnTriggerActivation(target);
     }

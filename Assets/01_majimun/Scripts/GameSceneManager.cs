@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameSceneManager : MonoBehaviour
         Exit
     }
 
+    private Image _transition;
+
     // [ Property ]
     public int stageLevel {  get; set; }
     public int gameMode   { get; set; }
@@ -21,6 +24,8 @@ public class GameSceneManager : MonoBehaviour
     {
         gameMode   = (int)GameSceneMode.Setup;
         stageLevel = 1;
+
+        _transition = GameObject.Find("Canvas/Transition").GetComponent<Image>();
     }
 
     void Update()
@@ -87,6 +92,6 @@ public class GameSceneManager : MonoBehaviour
 
     public void Exit()
     {
-
+        _transition.color += new Color(0, 0, 0, 0.001f);
     }
 }

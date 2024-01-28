@@ -6,8 +6,17 @@ using UnityEngine;
 
 public class Toilet : GimmickBehaviour
 {
+    // [ Serialize ]
     [ SerializeField ] private AudioClip   _flushSE;
     [ SerializeField ] private AudioSource _toiletAudio;
+    
+    private GameSceneManager _gameSceneManager;
+
+    private void Start()
+    {
+        _gameSceneManager = GameObject.FindObjectOfType<GameSceneManager>();
+    }
+
 
     public async override void OnTriggerActivation(GameObject target)
     {
@@ -17,10 +26,12 @@ public class Toilet : GimmickBehaviour
         {
             _toiletAudio.PlayOneShot( _flushSE );
             _canPlay = false;
+            _gameSceneManager.gameMode = (int)GameSceneManager.GameSceneMode.Exit;
             player.InuptDisable();
             
             SceneLoader.canLevelMove = false;
-            await Task.Delay( 5000 );
+            
+            await Task.Delay( 1000 * 10 );
 
             SceneLoader.Instance.LoadScene("TitleScene").Forget();
             SceneLoader.canLevelMove = true;
