@@ -1,5 +1,7 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Toilet : GimmickBehaviour
@@ -7,11 +9,22 @@ public class Toilet : GimmickBehaviour
     [ SerializeField ] private AudioClip   _flushSE;
     [ SerializeField ] private AudioSource _toiletAudio;
 
-    public override void OnTriggerActivation(GameObject target)
+    public async override void OnTriggerActivation(GameObject target)
     {
-        _toiletAudio.PlayOneShot( _flushSE );
-        _gimmickManager.gimmickDiscoveredCount++;
+        Player player = target.GetComponent<Player>();
 
-        base.OnTriggerActivation(target);
+        if(_canPlay)
+        {
+            _toiletAudio.PlayOneShot( _flushSE );
+            _canPlay = false;
+            player.InuptDisable();
+            
+            SceneLoader.canLevelMove = false;
+            await Task.Delay( 5000 );
+
+            SceneLoader.Instance.LoadScene("TitleScene").Forget();
+            SceneLoader.canLevelMove = true;
+            base.OnTriggerActivation(target);
+        }
     }
 }
